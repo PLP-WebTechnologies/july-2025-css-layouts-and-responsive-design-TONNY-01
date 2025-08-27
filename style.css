@@ -1,0 +1,172 @@
+/*----------------------------------------------------------
+  1. Global Reset and Box-Sizing
+----------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* include padding & border in width/height */
+}
+
+/*----------------------------------------------------------
+  2. Root & Typography
+----------------------------------------------------------*/
+:root {
+  --clr-primary: #283593;
+  --clr-secondary: #ffca28;
+  --clr-light: #ffffff;
+  --clr-gray: #f4f4f4;
+  --spacing: 1rem;
+  --fs-base: 1rem;
+  --fs-large: 1.25rem;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  background-color: var(--clr-gray);
+  color: #333;
+}
+
+/*----------------------------------------------------------
+  3. Site Header (Flexbox)
+----------------------------------------------------------*/
+.site-header {
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: var(--fs-large);
+}
+
+.main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing);
+}
+
+.main-nav a {
+  color: var(--clr-light);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.main-nav a:hover {
+  background-color: var(--clr-secondary);
+  border-radius: 4px;
+}
+
+/*----------------------------------------------------------
+  4. Main Layout (CSS Grid)
+----------------------------------------------------------*/
+.site-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 var(--spacing);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: single column */
+  grid-gap: var(--spacing);
+}
+
+/*----------------------------------------------------------
+  5. Content & Cards (Flexbox inside Grid)
+----------------------------------------------------------*/
+.content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+.card {
+  background-color: var(--clr-light);
+  padding: var(--spacing);
+  border: 2px solid var(--clr-primary);
+  border-radius: 4px;
+}
+
+/*----------------------------------------------------------
+  6. Sidebar Styling
+----------------------------------------------------------*/
+.sidebar {
+  background-color: var(--clr-light);
+  padding: var(--spacing);
+  border: 2px solid var(--clr-primary);
+  border-radius: 4px;
+}
+
+.sidebar-list {
+  list-style: none;
+  margin-top: var(--spacing);
+}
+
+.sidebar-list li + li {
+  margin-top: 0.5rem;
+}
+
+.sidebar-list a {
+  text-decoration: none;
+  color: var(--clr-primary);
+}
+
+/*----------------------------------------------------------
+  7. Footer
+----------------------------------------------------------*/
+.site-footer {
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+  text-align: center;
+  padding: var(--spacing);
+}
+
+/*----------------------------------------------------------
+  8. Responsive Breakpoints
+----------------------------------------------------------*/
+/* Tablet: two-column grid */
+@media (min-width: 600px) {
+  .layout {
+    grid-template-columns: 2fr 1fr;
+  }
+  .card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1 1 calc(50% - var(--spacing));
+  }
+}
+
+/* Desktop: increase gap and font sizes */
+@media (min-width: 900px) {
+  :root {
+    --spacing: 1.5rem;
+    --fs-base: 1.125rem;
+    --fs-large: 1.5rem;
+  }
+  .header-inner,
+  .site-main {
+    padding: 0 var(--spacing);
+  }
+  .main-nav .nav-list {
+    gap: calc(var(--spacing) * 1.5);
+  }
+}

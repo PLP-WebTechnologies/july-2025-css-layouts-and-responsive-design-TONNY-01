@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox & Grid Responsive Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="logo">MySite</h1>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <!-- Use Grid for the overall two-column layout -->
+    <div class="layout">
+      
+      <section class="content">
+        <h2>Welcome to Our Site</h2>
+        <p>
+          This section uses CSS Grid at wider breakpoints and collapses to a single column on mobile.
+        </p>
+        <article class="card-list">
+          <!-- Use Flexbox to align the cards -->
+          <div class="card">
+            <h3>Card One</h3>
+            <p>Flexbox makes it easy to distribute space and align items.</p>
+          </div>
+          <div class="card">
+            <h3>Card Two</h3>
+            <p>Cards wrap automatically when the container gets narrow.</p>
+          </div>
+          <div class="card">
+            <h3>Card Three</h3>
+            <p>Combine Flexbox and Grid for powerful, responsive layouts.</p>
+          </div>
+        </article>
+      </section>
+      
+      <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Related links, ads, or widgets go here.</p>
+        <ul class="sidebar-list">
+          <li><a href="#">Link A</a></li>
+          <li><a href="#">Link B</a></li>
+          <li><a href="#">Link C</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Tonny Kiplagat. All rights reserved.</p>
+  </footer>
+</body>
+</html>
